@@ -144,7 +144,7 @@ def draw_net(config, genome, view=False, filename=None, node_names=None, show_di
         inputs.add(k)
         name = 'Input Node:' + node_names.get(k, str(k))
         input_attrs = {'style': 'filled', 'shape': 'box', 'fillcolor': node_colors.get(k, 'lightgray')}
-        dot.node('', _attributes=input_attrs, label = name)
+        dot.node(name, _attributes=input_attrs)
 
     outputs = set()
     for k in config.genome_config.output_keys:
@@ -152,7 +152,7 @@ def draw_net(config, genome, view=False, filename=None, node_names=None, show_di
         name = 'Output Node:' + node_names.get(k, str(k))
         node_attrs = {'style': 'filled', 'fillcolor': node_colors.get(k, 'lightblue')}
 
-        dot.node('', _attributes=node_attrs, label = name)
+        dot.node(name, _attributes=node_attrs)
 
     if prune_unused:
         connections = set()
@@ -179,7 +179,7 @@ def draw_net(config, genome, view=False, filename=None, node_names=None, show_di
         attrs = {'style': 'filled',
                  'fillcolor': node_colors.get(n, 'white')}
         name = 'Used Node:' + str(n)
-        dot.node('', _attributes=attrs, label = name)
+        dot.node(name, _attributes=attrs)
 
     for cg in genome.connections.values():
         if cg.enabled or show_disabled:
