@@ -101,10 +101,9 @@ class Population(object):
             from neat.visualize import draw_net
             import pydot
 
-            filename = 'net_{}.svg'.format(k)
-            pydot_graph = draw_net(self.config, best, True, filename = filename)
-            (graph, )  = pydot.graph_from_dot_data(pydot_graph.getvalue())
-            plt.imread(graph.create_png())
+            filename = 'net_{}.png'.format(k)
+            pydot_graph = draw_net(self.config, best, True, filename = filename,  fmt = 'png')
+            plt.imread(filename + '.png')
             plt.show()
             
             # Track the best genome ever seen.
