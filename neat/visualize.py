@@ -179,7 +179,7 @@ def draw_net(config, genome, view=False, filename=None, node_names=None, show_di
         attrs = {'style': 'filled',
                  'fillcolor': node_colors.get(n, 'white')}
         name = str(n)
-        dot.node(name, _attributes=attrs, label = 'Used Node:)
+        dot.node(name, _attributes=attrs, label = 'Used Node:')
 
     for cg in genome.connections.values():
         if cg.enabled or show_disabled:
