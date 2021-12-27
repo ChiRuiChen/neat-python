@@ -137,15 +137,14 @@ class StdOutReporter(BaseReporter):
         
     def end_generation_plot(self, config, population, species_set, best_genome):            
         from neat.visualize import draw_net
+        from PIL import Image
         import matplotlib.pyplot as plt
-        import matplotlib.image as img
-
+        
         filename = 'net_{}.png'.format(self.generation)
         draw_net(config, best_genome, True, filename = filename,  fmt = 'png')
-        im = img.imread(filename + '.png')
-        fig = plt.figure(figsize=(2,1))
-        plt.figimage(im)
-        
+        im = Image.open(filename + '.png')
+        im = im.resize(im.size * 2)
+        plt.imshow(im)
         plt.show()    
     
     
