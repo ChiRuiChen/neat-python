@@ -102,7 +102,7 @@ class Population(object):
             filename = 'net_{}.svg'.format(k)
             draw_net(self.config, best, True, filename = filename)
             from IPython.display import SVG
-            SVG(filename)
+            SVG(filename + '.svg')
             
             # Track the best genome ever seen.
             if self.best_genome is None or best.fitness > self.best_genome.fitness:
