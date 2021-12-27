@@ -138,7 +138,8 @@ class StdOutReporter(BaseReporter):
         im = img.imread(filename + '.png')
         plt.imshow(im)
         plt.show()    
-
+    
+    
     def post_evaluate(self, config, population, species, best_genome):
         # pylint: disable=no-self-use
         fitnesses = [c.fitness for c in population.values()]
