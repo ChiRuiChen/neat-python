@@ -194,7 +194,7 @@ def draw_net(config, genome, view=False, filename=None, node_names=None, show_di
             
             weight_label = 'weight=' + str(cg.weight)
             
-            dot.edge(a, b, _attributes={'style': style, 'color': color, 'penwidth': width}, label= )
+            dot.edge(a, b, _attributes={'style': style, 'color': color, 'penwidth': width}, label= weight_label)
 
     dot.render(filename, view=view)
 
