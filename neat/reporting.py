@@ -145,7 +145,7 @@ class StdOutReporter(BaseReporter):
         im = Image.open(filename + '.png')
         
         width, height = im.size
-        wscale = 4
+        wscale = 8
         hscale = 8
         im = im.resize((width * wscale, height * hscale))
         plt.imshow(im)
