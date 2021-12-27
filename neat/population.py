@@ -102,9 +102,9 @@ class Population(object):
 
 
             filename = 'net_{}.svg'.format(k)
-            pydot_graph = draw_net(self.config, best, True, filename = filename)
-            
-            
+            pydot_graph = draw_net(self.config, best, True, filename = filename).create_png()
+            plt.imread(pydot_graph)
+            plt.show()
             
             # Track the best genome ever seen.
             if self.best_genome is None or best.fitness > self.best_genome.fitness:
