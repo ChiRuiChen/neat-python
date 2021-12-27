@@ -128,7 +128,7 @@ class StdOutReporter(BaseReporter):
         
         
         
-    def end_generation_plot(self, config, population, species, best_genome):            
+    def end_generation_plot(self, config, population, species_set, best_genome):            
         from neat.visualize import draw_net
         import matplotlib.pyplot as plt
         import matplotlib.image as img
