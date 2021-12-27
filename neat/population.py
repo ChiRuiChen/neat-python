@@ -97,7 +97,7 @@ class Population(object):
                     best = g
             self.reporters.post_evaluate(self.config, self.population, self.species, best)
             
-            
+            '''
             from neat.visualize import draw_net
             import matplotlib.pyplot as plt
             import matplotlib.image as img
@@ -107,6 +107,7 @@ class Population(object):
             im = img.imread(filename + '.png')
             plt.imshow(im)
             plt.show()
+            '''
             
             # Track the best genome ever seen.
             if self.best_genome is None or best.fitness > self.best_genome.fitness:
@@ -140,10 +141,12 @@ class Population(object):
             self.species.speciate(self.config, self.population, self.generation)
 
             self.reporters.end_generation(self.config, self.population, self.species)
-
+            
             self.generation += 1
 
         if self.config.no_fitness_termination:
             self.reporters.found_solution(self.config, self.generation, self.best_genome)
-
+        
+        
+            
         return self.best_genome
