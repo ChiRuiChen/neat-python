@@ -99,7 +99,7 @@ class Population(object):
             
             
             from neat.visualize import draw_net
-            import pydot
+            import matplotlib.pyplot as plt
 
             filename = 'net_{}.png'.format(k)
             pydot_graph = draw_net(self.config, best, True, filename = filename,  fmt = 'png')
