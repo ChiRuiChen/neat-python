@@ -30,6 +30,10 @@ class ReporterSet(object):
     def end_generation(self, config, population, species_set):
         for r in self.reporters:
             r.end_generation(config, population, species_set)
+            
+    def end_generation_plot(self, config, population, species_set, best_genome):
+        for r in self.reporters:
+            r.end_generation_plot(config, population, species_set, best_genome)
 
     def post_evaluate(self, config, population, species, best_genome):
         for r in self.reporters:
