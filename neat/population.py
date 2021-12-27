@@ -97,8 +97,12 @@ class Population(object):
                     best = g
             self.reporters.post_evaluate(self.config, self.population, self.species, best)
             
+            
             from neat.visualize import draw_net
-            draw_net(self.config, best, True, filename = 'net_{}'.format(k))
+            filename = 'net_{}.svg'.format(k)
+            draw_net(self.config, best, True, filename = filename)
+            from IPython.display import SVG
+            SVG(filename)
             
             # Track the best genome ever seen.
             if self.best_genome is None or best.fitness > self.best_genome.fitness:
