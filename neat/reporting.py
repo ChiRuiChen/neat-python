@@ -143,7 +143,8 @@ class StdOutReporter(BaseReporter):
         filename = 'net_{}.png'.format(self.generation)
         draw_net(config, best_genome, True, filename = filename,  fmt = 'png')
         im = img.imread(filename + '.png')
-        plt.imshow(im)
+      
+        plt.imshow(im, origin='lower', extent=[-4,4,-4,4], aspect=4)
         plt.show()    
     
     
