@@ -96,18 +96,7 @@ class Population(object):
                 if best is None or g.fitness > best.fitness:
                     best = g
             self.reporters.post_evaluate(self.config, self.population, self.species, best)
-            
-            '''
-            from neat.visualize import draw_net
-            import matplotlib.pyplot as plt
-            import matplotlib.image as img
-
-            filename = 'net_{}.png'.format(k)
-            draw_net(self.config, best, True, filename = filename,  fmt = 'png')
-            im = img.imread(filename + '.png')
-            plt.imshow(im)
-            plt.show()
-            '''
+      
             
             # Track the best genome ever seen.
             if self.best_genome is None or best.fitness > self.best_genome.fitness:
