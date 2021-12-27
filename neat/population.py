@@ -134,6 +134,7 @@ class Population(object):
             self.reporters.end_generation_plot(self.config, self.population, self.species, best)
             
             print(best)
+            print('\n\n')
             
             self.generation += 1
 
