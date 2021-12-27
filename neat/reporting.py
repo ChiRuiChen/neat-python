@@ -130,7 +130,7 @@ class StdOutReporter(BaseReporter):
         import matplotlib.pyplot as plt
         import matplotlib.image as img
 
-        filename = 'net_{}.png'.format(k)
+        filename = 'net_{}.png'.format(self.generation)
         draw_net(self.config, best, True, filename = filename,  fmt = 'png')
         im = img.imread(filename + '.png')
         plt.imshow(im)
