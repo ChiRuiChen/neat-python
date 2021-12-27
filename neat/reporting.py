@@ -127,15 +127,16 @@ class StdOutReporter(BaseReporter):
             print("Generation time: {0:.3f} sec".format(elapsed))
         
         from neat.visualize import draw_net
-            import matplotlib.pyplot as plt
-            import matplotlib.image as img
+        import matplotlib.pyplot as plt
+        import matplotlib.image as img
 
-            filename = 'net_{}.png'.format(k)
-            draw_net(self.config, best, True, filename = filename,  fmt = 'png')
-            im = img.imread(filename + '.png')
-            plt.imshow(im)
-            plt.show()
+        filename = 'net_{}.png'.format(k)
+        draw_net(self.config, best, True, filename = filename,  fmt = 'png')
+        im = img.imread(filename + '.png')
+        plt.imshow(im)
+        plt.show()
             
+        
 
     def post_evaluate(self, config, population, species, best_genome):
         # pylint: disable=no-self-use
