@@ -142,7 +142,7 @@ class Population(object):
 
             self.reporters.end_generation(self.config, self.population, self.species)
             
-            self.reporters.end_generation_plot(self.config, self.population, self.species, self.best_genome)
+            self.reporters.end_generation_plot(self.config, self.population, self.species, self.best)
             
             self.generation += 1
 
