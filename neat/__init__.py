@@ -3,6 +3,7 @@ import neat.nn as nn
 import neat.ctrnn as ctrnn
 import neat.iznn as iznn
 import neat.distributed as distributed
+from neat.visualize import*
 
 from neat.config import Config
 from neat.population import Population, CompleteExtinctionException
