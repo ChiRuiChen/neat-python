@@ -100,10 +100,12 @@ class Population(object):
             
             from neat.visualize import draw_net
             import matplotlib.pyplot as plt
+            import matplotlib.image as img
 
             filename = 'net_{}.png'.format(k)
-            pydot_graph = draw_net(self.config, best, True, filename = filename,  fmt = 'png')
-            plt.imread(filename + '.png')
+            draw_net(self.config, best, True, filename = filename,  fmt = 'png')
+            im = img.imread(filename + '.png')
+            plt.imshow(im)
             plt.show()
             
             # Track the best genome ever seen.
