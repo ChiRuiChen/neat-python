@@ -144,6 +144,8 @@ class Population(object):
             
             self.reporters.end_generation_plot(self.config, self.population, self.species, best)
             
+            print(best)
+            
             self.generation += 1
 
         if self.config.no_fitness_termination:
